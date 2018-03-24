@@ -2,7 +2,7 @@
 import requests
 import json
 
-key = {'oem_key':'ae62f9fe0f5b32ef'}
+key = {'oem_key':''}
 get_resp = requests.get('https://junction-tokyo.minikura.com/v1/minikura/item',params=key)
 get_data = get_resp.json()
 
