@@ -42,16 +42,6 @@ def arReader():
         # マーカが描画された画像を表示
         cv2.imshow('drawDetectedMarkers', frame)
 
-        if type(ids) == list:
-            print(ids)
-            if ids[0][0] == 1:
-                camera_matrix = calibrationParams.getNode("cameraMatrix").mat()
-                dist_coeffs = calibrationParams.getNode("distCoeffs").mat()
-                rvec, tvec, _ = aruco.estimatePoseSingleMarkers(
-                    corners, 0.05, camera_matrix, dist_coeffs)
-                print(rvec)
-                print(tvec)
-
         # Escキーで終了
         key = cv2.waitKey(33)
         if key == 27:
